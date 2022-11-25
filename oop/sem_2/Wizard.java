@@ -1,0 +1,12 @@
+import java.util.List;
+
+public class Wizard extends BaseHealer {
+
+    public Wizard(String name, List<BaseHero> team) {
+        super(17, 12, 0, new int[]{-5,-5}, 30, 9, name, "Wizard", team);
+    }
+    public Wizard(List<BaseHero> team) {
+        this("",team);
+    }
+
+}
