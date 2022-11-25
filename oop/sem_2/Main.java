@@ -87,7 +87,7 @@ public class Main {
                     team.add(new Wizard(team));
                     break;
                 case 6:
-                    team.add(new Сrossbowman(team));
+                    team.add(new Crossbowman(team));
                     break;
                 default:
                     break;
@@ -116,7 +116,7 @@ public class Main {
                 list.add(new Wizard(list));
                 break;
             case "Сrossbowman":
-                list.add(new Сrossbowman(list));
+                list.add(new Crossbowman(list));
                 break;
             default:
                 break;
