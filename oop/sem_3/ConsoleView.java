@@ -28,7 +28,6 @@ public class ConsoleView {
         System.out.println(AnsiColors.ANSI_GREEN + side);
         
         System.out.println(ConsoleView.top10);
-
         for (int i = 1; i <= Main.NUMHEROTOCREATE - 1; i++) {
             for(int j = 1; j <= Main.NUMHEROTOCREATE; j++) {
                 System.out.print(getChar(new Vector2(i, j)));
@@ -37,6 +36,8 @@ public class ConsoleView {
             for (int k = 0; k < TAB; k++) {
                 System.out.print(" ");
             }
+            // На последнем ходе не обновляется статус на Герой убит... Пока не могу придумать решение.
+            // скорее всего надо пересмотреть генерацию сообщений... в классе завести текст результата?
             temp = team_left[i - 1];
             while(temp.length() < max_lenght + SHIFT) {
                 temp += " ";

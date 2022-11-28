@@ -14,6 +14,12 @@ public class Main {
         String[] lightside_text;
         String[] darkside_text;
         while (true){
+            String temp = "";
+            if (GameOver(darkside)) {
+                temp = AnsiColors.ANSI_GREEN+"Темная сторона пала :("+AnsiColors.ANSI_RESET;
+            } else if (GameOver(lightside)){
+                temp = AnsiColors.ANSI_BLUE+"Светлая сторона пала, тьма воссторжестовала!"+AnsiColors.ANSI_RESET;
+            }
             if (ConsoleView.step > 0) {
                 if (ConsoleView.step % 2 == 0) {
                     lightside_text = teamStep(lightside, darkside);
@@ -33,19 +39,15 @@ public class Main {
             
             int max_lenght = 0;
             for (int i = 0; i < NUMHEROTOCREATE; i++) {
-                if (max_lenght < lightside_text[i].length()) {
-                    max_lenght = lightside_text[i].length();
+                if (max_lenght < darkside_text[i].length()) {
+                    max_lenght = darkside_text[i].length();
                 }
             }
-            String temp = "";
-            if (GameOver(darkside)) {
-                temp = AnsiColors.ANSI_GREEN+"Темная сторона пала :("+AnsiColors.ANSI_RESET;
-            } else if (GameOver(lightside)){
-                temp = AnsiColors.ANSI_BLUE+"Светлая сторона пала, тьма воссторжестовала!"+AnsiColors.ANSI_RESET;
-            }
+            
             ConsoleView.view(darkside_text, lightside_text, max_lenght);
 
             if (GameOver(darkside) || GameOver(lightside)) {
+
                 System.out.println(temp);
                 break;
             } else {

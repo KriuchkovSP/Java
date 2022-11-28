@@ -79,6 +79,7 @@ public abstract class BaseHero implements BaseInterface {
         if (unit.currentHP <= 0) {
             unit.currentHP = 0;
             unit.status = "dead";
+
             return String.format("%s был убит", unit.name);
         } else {return "";}
     }
